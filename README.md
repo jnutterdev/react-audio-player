@@ -1,3 +1,5 @@
 ## Simple React.js project barebones
 
-- Using Material-UI
+- React.js
+- Bulma CSS framework
+- Netlify
