@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Main from './Main';
+// import "./assets/css/bulma/css/bulma.css";
+import "./assets/css/style.css";
+
 import reportWebVitals from './reportWebVitals';
 
 
