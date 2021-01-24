@@ -5,14 +5,10 @@ class About extends Component {
     return (
       <div>
         <h2>About this project</h2>
-        <p>Mauris sem velit, vehicula eget sodales vitae,
-        rhoncus eget sapien:</p>
+        <p>Some of the key features:</p>
         <ol>
-          <li>Nulla pulvinar diam</li>
-          <li>Facilisis bibendum</li>
-          <li>Vestibulum vulputate</li>
-          <li>Eget erat</li>
-          <li>Id porttitor</li>
+          <li>Simple React app</li>
+          <li>Deployed on Netlify</li>
         </ol>
       </div>
     );
