@@ -8,10 +8,11 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
         height: '100vh',
+        fontFamily: 'Poppins',
     },
     appbar: {
         background: 'none',
-        fontFamily: 'Poppins',
+       
     },
     icon: {
         color: '#00BD9D',
@@ -20,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
     colorText: {
        color: '#00BD9D',
        fontSize: '3rem',
-       fontFamily: 'Poppins',
     }
  }));
   export default function Header() {
