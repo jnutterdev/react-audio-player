@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, IconButton, Toolbar } from '@material-ui/core';
 import FlashOnIcon from '@material-ui/icons/FlashOn';
+import Synth from '../components/Synth';
 
 const useStyles = makeStyles((theme) => ({ 
     root: {
@@ -39,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
           <h1 className={classes.colorText}>
               Coming soon!
           </h1>
+          <Synth />
       </div>
       </div>
     );
