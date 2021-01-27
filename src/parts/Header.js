@@ -1,8 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, IconButton, Toolbar } from '@material-ui/core';
 import FlashOnIcon from '@material-ui/icons/FlashOn';
-import { TextRotationNoneTwoTone } from '@material-ui/icons';
-
 
 const useStyles = makeStyles((theme) => ({ 
     root: {
