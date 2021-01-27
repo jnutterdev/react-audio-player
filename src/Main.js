@@ -1,40 +1,22 @@
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { CssBaseline } from '@material-ui/core'
+import bg from './assets/img/papyrus-dark.png';
 
-import React, { Component } from "react";
-import {
-  Route, 
-NavLink, 
-HashRouter
-} from 'react-router-dom';
+import Header from './parts/Header';
 
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-
- 
-class Main extends Component {
-  render() {
-    return (
-    
-        <HashRouter>
-        
-        <div>
-          <h1>Project page</h1>
-          <ul className="header">
-            <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/about">About</NavLink></li>
-            <li><NavLink to="/contact">Contact</NavLink></li>
-          </ul>
-          <div className="content">
-            <Route exact path="/" component={Home}/>
-            <Route path="/about" component={About}/>
-            <Route path="/contact" component={Contact}/>
-          </div>
-        </div>
-       
-        </HashRouter>
-       
-    );
-  }
+const useStyles = makeStyles((theme) => ({
+  root: {
+    minHeight: '100vh',
+    backgroundImage: `url(${bg})`,
+  },
+}));
+export default function Main() {
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <CssBaseline />
+      <Header />
+    </div>
+  );
 }
- 
-export default Main;
