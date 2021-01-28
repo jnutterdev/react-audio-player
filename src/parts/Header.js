@@ -1,7 +1,8 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, IconButton, Toolbar } from '@material-ui/core';
 import FlashOnIcon from '@material-ui/icons/FlashOn';
-import Synth from '../components/Synth';
+// import Synth from './Synth';
+import Player from './Player';
 
 const useStyles = makeStyles((theme) => ({ 
     root: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '2rem',
     }, 
     colorText: {
-       color: '#00BD9D',
+       color: '#F2A007',
        fontSize: '3rem',
     }
  }));
@@ -40,7 +41,8 @@ const useStyles = makeStyles((theme) => ({
           <h1 className={classes.colorText}>
               Coming soon!
           </h1>
-          <Synth />
+          {/* <Synth /> */}
+          <Player />
       </div>
       </div>
     );
