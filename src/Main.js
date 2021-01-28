@@ -5,6 +5,7 @@ import bg from './assets/img/papyrus-dark.png';
 
 import Header from './parts/Header';
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: '100vh',
@@ -17,6 +18,7 @@ export default function Main() {
     <div className={classes.root}>
       <CssBaseline />
       <Header />
+     
     </div>
   );
 }

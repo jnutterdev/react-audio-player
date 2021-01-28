@@ -2,6 +2,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, IconButton, Toolbar } from '@material-ui/core';
 import FlashOnIcon from '@material-ui/icons/FlashOn';
 
+import Player from '../parts/Player';
+
 const useStyles = makeStyles((theme) => ({ 
     root: {
         display: 'flex',
@@ -36,10 +38,13 @@ const useStyles = makeStyles((theme) => ({
           </Toolbar>
       </AppBar>
       <div>
-          <h1 className={classes.colorText}>
-              Coming soon!
-          </h1>
-      </div>
-      </div>
+            <h1 className={classes.colorText}>
+                Play some tunes!
+            </h1>
+            <div className="audio-player" >
+                    <Player />
+            </div>
+        </div>
+    </div>
     );
   }
