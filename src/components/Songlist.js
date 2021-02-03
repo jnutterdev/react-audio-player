@@ -1,7 +1,7 @@
 import React from "react";
 import FaPause from '@material-ui/icons/Pause';
 import FaPlay from '@material-ui/icons/PlayArrow';
-// import "./songlist.css";
+
 class SongsList extends React.Component {
   render() {
     return (

@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Header from "./components/Header";
 import Player from "./components/Player";
 import SongsList from "./components/Songlist";
-import { makeStyles } from '@material-ui/core/styles';
 
 // main player components
 import list from "./songs/songlist";
 
 // player styling components
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
 import "./assets/css/style.css";
 
 class App extends React.Component {
@@ -39,7 +41,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="app bg">
+    
+      <div className="app">
+        <CssBaseline />
+        <Container>
+        <Header />
         <Player
           url={this.state.load ? this.state.select[0].url : ""}
           status={this.state.status}
@@ -54,6 +60,7 @@ class App extends React.Component {
           off={this.offme}
           status={this.state.status}
         />
+        </Container>
       </div>
     );
   }

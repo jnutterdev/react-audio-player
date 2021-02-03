@@ -3,7 +3,7 @@ import {Howl, Howler} from 'howler';
 import FaPause from '@material-ui/icons/Pause';
 import FaPlay from '@material-ui/icons/PlayArrow';
 import { secondsToMinutes, timeCounter } from "../lib/time";
-// import "./player.css";
+
 
 class Player extends React.Component {
   state = {
@@ -31,7 +31,7 @@ class Player extends React.Component {
     document.removeEventListener("mouseup", this.onvolumeup);
   }
 
-  componentWillReceiveProps() {
+  UNSAFE_componentWillReceiveProps() {
     if (this.props.status) {
       this.pause();
     } else {
@@ -199,7 +199,7 @@ class Player extends React.Component {
                 onTimeUpdate={this.timeUpdate}
                 onProgress={this.bufferProgress}
                 onEnded={this.handleEnd}
-                type="audio/mpeg"
+                type="audio/mp3"
               />
               <div
                 className={loaded ? "playerbar-holder" : ""}
