@@ -1,18 +1,63 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Main from './Main';
+import Player from "./components/Player";
+import SongsList from "./components/Songlist";
+import { makeStyles } from '@material-ui/core/styles';
+
+// main player components
+import list from "./songs/songlist";
+
+// player styling components
 import "./assets/css/style.css";
-import reportWebVitals from './reportWebVitals';
 
+class App extends React.Component {
+  state = {
+    load: false,
+    select: null,
+    id: 0,
+    status: false
+  };
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Main />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  onSelect = id => {
+    let song = list.filter(song => song.id === id);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    this.setState({
+      select: song,
+      load: true,
+      id: id,
+      status: true
+    });
+
+    // console.log(this.state.status);
+  };
+
+  offme = () => {
+    this.setState({
+      status: !this.state.status
+    });
+  };
+
+  render() {
+    return (
+      <div className="app bg">
+        <Player
+          url={this.state.load ? this.state.select[0].url : ""}
+          status={this.state.status}
+          load={this.state.load}
+          offMe={this.offme}
+          songName={this.state.load && this.state.select[0].name}
+        />
+        <SongsList
+          list={list}
+          Onselect={this.onSelect}
+          id={this.state.id && this.state.id}
+          off={this.offme}
+          status={this.state.status}
+        />
+      </div>
+    );
+  }
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);

@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core'
 import bg from './assets/img/papyrus-dark.png';
 
-import Header from './parts/Header';
+import Header from './components/Header';
 
 const useStyles = makeStyles((theme) => ({
   root: {
