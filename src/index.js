@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -90,3 +91,23 @@ ReactDOM.render(
   <WebPlayer title="Web audio player"/>,
   document.getElementById('root')
 );
+=======
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Main from './Main';
+import "./assets/css/style.css";
+import reportWebVitals from './reportWebVitals';
+
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Main />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+>>>>>>> 74b4a90eb4d393c88457039a8c5675a43ab8ea1c
