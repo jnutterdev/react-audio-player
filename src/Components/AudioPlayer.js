@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import VolumeSlider from './VolumeSlider';
 import AudioPlayerButtons from './AudioPlayerButtons';
 
@@ -7,14 +7,16 @@ class AudioPlayer extends Component {
 		super(props);
 		this.state = {
 			volumeBeforeMute:.50,
-			speakerEntity:"&#128266;"
+			speakerEntity:"&#128266;",
+			
 		}
 		this.pause = this.pause.bind(this);
 		this.play = this.play.bind(this);
 		this.mute = this.mute.bind(this);
 		this.changeVolume = this.changeVolume.bind(this);
 		this.volumeRef = React.createRef();
-		this.duration = this.duration.bind(this);
+		
+		
 	}
 	
 	componentDidMount(){
@@ -31,43 +33,41 @@ class AudioPlayer extends Component {
 		this.refs.audio.pause();
 	}
 		
-	duration(){
-		this.duration = document.getElementById("songInfo").duration;
-		document.getElementById("songLength").innerHTML = this.duration;
-	}
-
 	play(){
 		this.refs.audio.play();
 		this.refs.audio.volume = this.volumeRef.current.value/100;		
 	}
 
 	mute(){
-		if(this.refs.audio.volume === 0)
+		
+		if(this.refs.audio.volume === 0 )
 		{
 			// To unmute the player
-			this.refs.audio.volume=this.volumeRef.current.value/100;
-			this.setState((state)=>({
+			this.refs.audio.volume = this.volumeRef.current.value/100;
+			this.setState((state) => ({
 				speakerEntity:'&#128266;'
 			}));
 		} else {		
 			// To mute the player
-			this.setState((state)=>({
+			this.setState((state) =>({
 				speakerEntity:'&#128263;',
 			}));
 			this.refs.audio.volume = 0;
 		}
 
 	}
+
+	
 	
 	changeVolume() {
 		this.refs.audio.volume = this.volumeRef.current.value/100;
-		if(this.refs.audio.volume>0) {
-			this.setState((state)=>({
-				speakerEntity:'&#128266;',
+		if(this.refs.audio.volume > 0) {
+			this.setState((state) => ({
+				speakerEntity: '&#128266;',
 			}));			
 		} else {
-			this.setState((state)=>({
-				speakerEntity:'&#128263;',
+			this.setState((state) => ({
+				speakerEntity: '&#128263;',
 			}));			
 		}
 	}
@@ -80,7 +80,7 @@ class AudioPlayer extends Component {
 					<source src={this.props.audiopath} type="audio/mpeg" />
 				</audio>
 
-				<AudioPlayerButtons id="songInfo" entity={this.state.speakerEntity} pause={this.pause} play={this.play} mute={this.mute} duration={this.duration} />
+				<AudioPlayerButtons id="songInfo" entity={this.state.speakerEntity} pause={this.pause} play={this.play} mute={this.mute} duration={this.duration} clickedButtonId={this.state.buttonClass} />
 				<div className="slider-ctn">
 					<VolumeSlider changeVolume={this.changeVolume} volumeRef={this.volumeRef}/>
 				</div>

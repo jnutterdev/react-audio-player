@@ -2,27 +2,38 @@
 import React, {Component} from 'react';
 
 class AudioPlayerButtons extends Component {
-	
+	constructor(props) {
+		super(props);
+		this.state = {
+			isMute: false,
+		}
+		this.muteIcon = this.muteIcon.bind(this);
+		this.muteActions = this.muteActions.bind(this);
+	}
+
 	shouldComponentUpdate(newProps) {
 		if(newProps.entity !== this.props.entity) {
-			console.log('component has update');
+			console.log('component has updated');
 			return true;
 		} else {
 			console.log('component has not updated.');
 			return false;
 		}
 	}
-	
+
+	muteIcon() {
+		this.setState({ isMute: !this.state.isMute })
+	}
+
+	muteActions(){
+		// this.state.mute;
+		this.muteIcon();
+	}
+
 	render() {
 		return (
 			<>
-				{/* <aside>
-					<button onClick={this.props.pause} className='pause-button'>||</button>
-					<button onClick={this.props.play} className='play-button'>&#9654;</button>
-					<button onClick={this.props.mute} className='mute-button' dangerouslySetInnerHTML={{__html: this.props.entity}} ></button>
-				</aside> */}
-				
-
+	
 				<div className="infos-ctn">
 				<div className="timer">00:00</div>
 				<div className="title">
@@ -82,12 +93,15 @@ class AudioPlayerButtons extends Component {
 					</div>
 				
 				{/* //  MUTE BUTTON / AUDIOPLAYER > AUDIOPLAYERBUTTONS (this.mute)  */}
-					<div className="btn-mute" id="toggleMute" >
-						
-					</div>
-					<div id="btn-faws-volume">
-							<i id="icon-vol-mute" className='fas fa-volume-mute'  onClick={this.props.mute} ></i>
+					<div className="btn-mute" id="toggleMute" onClick={this.muteActions}>
+						<div id="btn-faws-volume" >
+							 { this.state.isMute
+         					 ? <i id="iconVolUp" className="fas fa-volume-up"></i>
+          						: <i id="iconVolMute" className="fas fa-volume-mute"></i>
+        					}
 						</div>
+					</div>
+				
 				</div>
 				
 				</>
