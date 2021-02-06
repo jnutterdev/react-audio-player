@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import VolumeSlider from './VolumeSlider';
 import AudioPlayerButtons from './AudioPlayerButtons';
-import Buttons from './Buttons';
 
 class AudioPlayer extends Component {
 	constructor(props) {
