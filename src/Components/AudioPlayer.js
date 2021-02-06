@@ -14,6 +14,7 @@ class AudioPlayer extends Component {
 		this.mute = this.mute.bind(this);
 		this.changeVolume = this.changeVolume.bind(this);
 		this.volumeRef = React.createRef();
+		this.duration = this.duration.bind(this);
 	}
 	
 	componentDidMount(){
@@ -30,6 +31,11 @@ class AudioPlayer extends Component {
 		this.refs.audio.pause();
 	}
 		
+	duration(){
+		this.duration = document.getElementById("songInfo").duration;
+		document.getElementById("songLength").innerHTML = this.duration;
+	}
+
 	play(){
 		this.refs.audio.play();
 		this.refs.audio.volume = this.volumeRef.current.value/100;		
@@ -48,7 +54,7 @@ class AudioPlayer extends Component {
 			this.setState((state)=>({
 				speakerEntity:'&#128263;',
 			}));
-			this.refs.audio.volume=0;
+			this.refs.audio.volume = 0;
 		}
 
 	}
@@ -74,7 +80,7 @@ class AudioPlayer extends Component {
 					<source src={this.props.audiopath} type="audio/mpeg" />
 				</audio>
 
-				<AudioPlayerButtons entity={this.state.speakerEntity} pause={this.pause} play={this.play} mute={this.mute} />
+				<AudioPlayerButtons id="songInfo" entity={this.state.speakerEntity} pause={this.pause} play={this.play} mute={this.mute} duration={this.duration} />
 				<div className="slider-ctn">
 					<VolumeSlider changeVolume={this.changeVolume} volumeRef={this.volumeRef}/>
 				</div>
