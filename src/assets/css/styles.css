@@ -75,6 +75,10 @@ MAIN WEB AUDIO PLAYER STYLES
     padding-top: 20px;
 }
 
+.infos-ctn .title {
+    display: block;
+}
+
 .btn-ctn>div {
     padding: 5px;
     margin-top: 18px;

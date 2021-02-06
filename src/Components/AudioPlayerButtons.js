@@ -24,15 +24,19 @@ class AudioPlayerButtons extends Component {
 				
 
 				<div className="infos-ctn">
-					<div className="timer">00:00</div>
-					<div className="title"></div>
-					<div className="duration">00:00</div>
+				<div className="title">
+						<h3>Artist name - Song name</h3>
+				</div>
+				<div className="timer">00:00</div>
+				<div className="duration">00:00</div>
 				</div>
 
 				{/* //  PROGRESS BAR / NO COMPONENT  */}
+				
 				<div id="myProgress">
-					<div id="myBar"></div>
+						<div id="myBar"></div>
 				</div>
+				
 			
 				{/* //  PREVIOUS SONG BUTTON / NO COMPONENT  */}
 				<div className="btn-ctn">
