@@ -1,9 +1,11 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import './assets/css/styles.css';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 import Header from './Components/Header';
 import AudioPlayer from './Components/AudioPlayer';
-import Buttons from './Components/Buttons';
 import Footer from './Components/Footer'
 
 class WebPlayer extends Component {
@@ -63,31 +65,20 @@ class WebPlayer extends Component {
 	render() {
 
 		return (
+			<>
+			<CssBaseline />
+			<Container maxWidth="sm">
+				<Typography />
 			<div className="audio-container"> 
         		<Header /> 
 					<h1>{this.props.title}</h1> 
 
         				<AudioPlayer childRef="audio" audiopath={this.state.audiopath} /> 
-
-
-							{/* <section className="mp3list-buttons">
-					{
-						this.state.mp3Data.map((mp3,index)=>
-						<Buttons key={index} 
-						changeMP3={this.changeMP3}
-						clickedButtonId={this.state.mp3name}
-						mp3={mp3.name}
-						artist={mp3.artist}
-						genre={mp3.genre}
-						/>
-						)
-					}
-							</section> */}
-
-
-
+						
         		<Footer />
 			</div>
+			</Container>
+			</>
 		);
 	}
 }
