@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import VolumeSlider from './VolumeSlider';
 import AudioPlayerButtons from './AudioPlayerButtons';
 
-
 class AudioPlayer extends Component {
 	constructor(props) {
 		super(props);
@@ -70,12 +69,29 @@ class AudioPlayer extends Component {
 	render() {
 		
 		return (
-			<div>
+			<div className="player-ctn">
 				<audio ref={this.props.childRef}>
 					<source src={this.props.audiopath} type="audio/mpeg" />
 				</audio>
+
 				<AudioPlayerButtons entity={this.state.speakerEntity} pause={this.pause} play={this.play} mute={this.mute} />
-				<VolumeSlider changeVolume={this.changeVolume} volumeRef={this.volumeRef}/>
+				<div className="slider-ctn">
+					<VolumeSlider changeVolume={this.changeVolume} volumeRef={this.volumeRef}/>
+				</div>
+				{/* <div className="playlist-ctn">
+					{
+								this.state.mp3Data.map((mp3,index)=>
+								<Buttons key={index} 
+								changeMP3={this.changeMP3}
+								clickedButtonId={this.state.mp3name}
+								mp3={mp3.name}
+								artist={mp3.artist}
+								genre={mp3.genre}
+								/>
+								)
+					}
+							</div> */}
+
 			</div>
 		)
 	}

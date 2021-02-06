@@ -5,7 +5,7 @@ import FlashOnIcon from '@material-ui/icons/FlashOn';
     return (
     <div className="">
       <AppBar className="appbar" elevation={0}>
-          <Toolbar>
+          <Toolbar className="navigation">
           <h1>Music Player</h1>
           <IconButton>
             <FlashOnIcon className="icon" />
