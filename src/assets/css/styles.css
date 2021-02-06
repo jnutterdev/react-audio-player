@@ -13,14 +13,24 @@ code {
     margin: 50px auto;
 }
 
-.slider {}
-
 .footer {
     width: 420px;
     padding: 10px;
     margin: 4rem auto;
     color: #fff;
     text-align: center;
+}
+
+.navigation {
+    background: #141414;
+}
+
+.navigation h1 {
+    color: #5AEDD2;
+}
+
+.navigation .icon {
+    color: #F28E13;
 }
 
 
@@ -40,7 +50,7 @@ MAIN WEB AUDIO PLAYER STYLES
 #myBar {
     width: 0%;
     height: 5px;
-    background-color: #ffc266;
+    background-color: #3FA693;
     border-radius: 10px;
 }
 
@@ -73,7 +83,7 @@ MAIN WEB AUDIO PLAYER STYLES
 
 .infos-ctn>div {
     margin-bottom: 8px;
-    color: #ffc266;
+    color: #3FA693;
 }
 
 .first-btn {
@@ -94,7 +104,7 @@ MAIN WEB AUDIO PLAYER STYLES
     border-radius: 15px;
     width: 420px;
     padding: 10px;
-    background-color: #373737;
+    background-color: #0e0e0e;
     margin: auto;
 }
 
@@ -107,7 +117,7 @@ MAIN WEB AUDIO PLAYER STYLES
 }
 
 .playlist-track-ctn:last-child {
-    /*border: 1px solid #ffc266; */
+    border: 1px solid #3FA693;
 }
 
 .playlist-track-ctn>div {
@@ -122,7 +132,7 @@ MAIN WEB AUDIO PLAYER STYLES
 .playlist-duration {
     padding-top: 7px;
     padding-bottom: 7px;
-    color: #e9cc95;
+    color: #5AEDD2;
     font-size: 14px;
     pointer-events: none;
 }
@@ -133,14 +143,14 @@ MAIN WEB AUDIO PLAYER STYLES
 
 .active-track {
     background: #4d4d4d;
-    color: #ffc266 !important;
+    color: #3FA693 !important;
     font-weight: bold;
 }
 
 .active-track>.playlist-info-track,
 .active-track>.playlist-duration,
 .active-track>.playlist-btn-play {
-    color: #ffc266 !important;
+    color: #3FA693 !important;
 }
 
 .playlist-btn-play {
@@ -150,6 +160,36 @@ MAIN WEB AUDIO PLAYER STYLES
 }
 
 .fas {
-    color: #ffc266;
+    color: #3FA693;
     font-size: 20px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d9d9f2;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #3FA693;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #3FA693;
+    cursor: pointer;
 }
