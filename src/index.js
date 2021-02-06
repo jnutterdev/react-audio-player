@@ -63,11 +63,14 @@ class WebPlayer extends Component {
 	render() {
 
 		return (
-			<div className="audio-container">
-        <Header />
-				<h1>{this.props.title}</h1>
-        <AudioPlayer childRef="audio" audiopath={this.state.audiopath} />
-				<section className="mp3list-buttons">
+			<div className="audio-container"> 
+        		<Header /> 
+					<h1>{this.props.title}</h1> 
+
+        				<AudioPlayer childRef="audio" audiopath={this.state.audiopath} /> 
+
+
+							{/* <section className="mp3list-buttons">
 					{
 						this.state.mp3Data.map((mp3,index)=>
 						<Buttons key={index} 
@@ -79,8 +82,11 @@ class WebPlayer extends Component {
 						/>
 						)
 					}
-				</section>
-        <Footer />
+							</section> */}
+
+
+
+        		<Footer />
 			</div>
 		);
 	}

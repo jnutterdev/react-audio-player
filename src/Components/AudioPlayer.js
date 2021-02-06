@@ -70,7 +70,7 @@ class AudioPlayer extends Component {
 	render() {
 		
 		return (
-			<div>
+			<div className="player-ctn">
 				<audio ref={this.props.childRef}>
 					<source src={this.props.audiopath} type="audio/mpeg" />
 				</audio>
