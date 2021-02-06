@@ -74,9 +74,11 @@ class AudioPlayer extends Component {
 				<audio ref={this.props.childRef}>
 					<source src={this.props.audiopath} type="audio/mpeg" />
 				</audio>
-				<AudioPlayerButtons entity={this.state.speakerEntity} pause={this.pause} play={this.play} mute={this.mute} />
-				<VolumeSlider changeVolume={this.changeVolume} volumeRef={this.volumeRef}/>
 
+				<AudioPlayerButtons entity={this.state.speakerEntity} pause={this.pause} play={this.play} mute={this.mute} />
+				<div className="slider-ctn">
+					<VolumeSlider changeVolume={this.changeVolume} volumeRef={this.volumeRef}/>
+				</div>
 				{/* <div className="playlist-ctn">
 					{
 								this.state.mp3Data.map((mp3,index)=>
