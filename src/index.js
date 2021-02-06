@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './assets/css/styles.css';
 import Header from './Components/Header';
 import AudioPlayer from './Components/AudioPlayer';
 import Buttons from './Components/Buttons';
