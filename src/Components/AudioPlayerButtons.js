@@ -16,11 +16,11 @@ class AudioPlayerButtons extends Component {
 	render() {
 		return (
 			<>
-				<aside>
+				{/* <aside>
 					<button onClick={this.props.pause} className='pause-button'>||</button>
 					<button onClick={this.props.play} className='play-button'>&#9654;</button>
 					<button onClick={this.props.mute} className='mute-button' dangerouslySetInnerHTML={{__html: this.props.entity}} ></button>
-				</aside>
+				</aside> */}
 				
 
 				<div className="infos-ctn">
@@ -36,36 +36,41 @@ class AudioPlayerButtons extends Component {
 			
 				{/* //  PREVIOUS SONG BUTTON / NO COMPONENT  */}
 				<div className="btn-ctn">
-					<div className="btn-action first-btn" onclick="previous()">
+					<div className="btn-action first-btn" onclick="">
 						<div id="btn-faws-back">
 							<i className='fas fa-step-backward'></i>
 						</div>
 					</div>
 				
 				{/* //   REWIND SONG BUTTON / NO COMPONENT  */}
-					<div className="btn-action" onclick="rewind()">
+					<div className="btn-action" onclick="">
 						<div id="btn-faws-rewind">
 							<i className='fas fa-backward'></i>
 						</div>
 					</div>
 
 				{/* //  PLAY BUTTON / AUDIOPLAYER > AUDIOPLAYERBUTTONS (this.play)  */}
-					<div className="btn-action" onclick="toggleAudio()">
+					<div className="btn-action" onclick="">
 						<div id="btn-faws-play-pause">
 							<i className='fas fa-play' id="icon-play" onClick={this.props.play} ></i>
-							<i className='fas fa-pause' id="icon-pause" style={{ display: 'none' }} onClick={this.props.pause} ></i>
+						</div>
+					</div>
+
+					<div className="btn-action" onclick="">
+						<div id="btn-faws-play-pause">
+							<i className='fas fa-pause' id="icon-pause" onClick={this.props.pause} ></i>
 						</div>
 					</div>
 				
 				{/* //  FFWD BUTTON / NO COMPONENT  */}
-					<div className="btn-play" onclick="forward()">
+					<div className="btn-play" onclick="">
 						<div id="btn-faws-forward">
 							<i className='fas fa-forward'></i>
 						</div>
 					</div>
 				
 				{/* //  NEXT SONG BUTTON / NO COMPONENT  */}
-					<div className="btn-action" onclick="next()">
+					<div className="btn-action" onclick="">
 						<div id="btn-faws-next">
 							<i className='fas fa-step-forward'></i>
 						</div>
