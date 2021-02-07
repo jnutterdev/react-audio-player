@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
 import Header from './Components/Layout/Header'
 import Playlist from './Components/Features/Playlist'
 import Actions from './Actions'
@@ -8,25 +10,23 @@ import PlayerState from './Components/PlayerState'
 
 
 import './assets/css/styles.css'
-import './assets/css/input.css'
 
 class AudioPlayer extends Component {
 render() {
   return (
-    <PlayerState>
-      <div className="main">
-        <div className="top">
-          <div className="left">
-            <Header />
+    <>
+    <CssBaseline />
+      <Container>
+        <Header />
+        <div className="player-ctn">
+          <PlayerState>
+              <Actions /> 
+              <Controls />
+              <Playlist />
+          </PlayerState>
           </div>
-          <div className="right">
-            <Actions />
-            <Playlist />
-          </div>
-        </div>
-        <Controls />
-      </div>
-    </PlayerState>
+    </Container>
+    </>
   );
 }
 }
