@@ -63,7 +63,7 @@ function Controls() {
 
    
         <div class="infos-ctn">
-            <div class="title"></div>
+            <div class="title">{songs[currentSong][0]}</div>
         </div>
 
         <div className="myProgress">
