@@ -22,7 +22,7 @@ function Controls() {
   const audio = useRef('audio_tag');
 
   // self State
-  const [statevolum, setStateVolum] = useState(0.3)
+  const [statevolume, setstatevolume] = useState(0.3)
   const [dur, setDur] = useState(0)
   const [currentTime, setCurrentTime] = useState(0)
 
@@ -31,7 +31,7 @@ function Controls() {
   const toggleAudio = () => audio.current.paused ? audio.current.play() : audio.current.pause();
 
   const handleVolume = (q) => {
-    setStateVolum(q);
+    setstatevolume(q);
     audio.current.volume = q;
   }
 
@@ -42,15 +42,14 @@ function Controls() {
   }
 
   useEffect(() => {
-    audio.current.volume = statevolum;
+    audio.current.volume = statevolume;
     if (playing) { toggleAudio() }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSong])
 
   return (
   
-    <>
-    <div className="controls">
+    <div className="player-ctn">
             <audio
 
           onTimeUpdate={(e) => setCurrentTime(e.target.currentTime)}
@@ -62,14 +61,12 @@ function Controls() {
           preload='true'
           src={songs[currentSong][1]} />
 
-    <div class="player-ctn">
+   
         <div class="infos-ctn">
-            <div class="timer">00:00</div>
             <div class="title"></div>
-            <div class="duration">00:00</div>
         </div>
 
-        <div id="myProgress">
+        <div className="myProgress">
             <span className="currentT">{fmtMSS(currentTime)}</span>
             <input
           onChange={handleProgress}
@@ -101,15 +98,12 @@ function Controls() {
             <div class="btn-mute" id="toggleMute">
                 <div id="btn-faws-volume">
                     <span className="volume"><i className="fas fa-volume-down"></i></span>
-                    <input value={Math.round(statevolum * 100)} type="range" name="volBar" id="volBar" onChange={(e)=> handleVolume(e.target.value / 100)} />
+                    <input value={Math.round(statevolume * 100)} type="range" name="volBar" id="volBar" onChange={(e)=> handleVolume(e.target.value / 100)} />
                 </div>
             </div>
+      </div>
+    </div>
 
-        </div>
-        <div class="playlist-ctn"></div>
-    </div>
-    </div>
-  </>
   )
 }
 

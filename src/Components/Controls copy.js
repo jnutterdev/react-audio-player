@@ -16,13 +16,14 @@ function Controls() {
     toggleRepeat,
     togglePlaying,
     handleEnd,
+    mute
 
   } = useContext(playerContext)
 
   const audio = useRef('audio_tag');
 
   // self State
-  const [statevolum, setStateVolum] = useState(0.3)
+  const [statevolume, setStateVolume] = useState(0.3)
   const [dur, setDur] = useState(0)
   const [currentTime, setCurrentTime] = useState(0)
 
@@ -31,7 +32,7 @@ function Controls() {
   const toggleAudio = () => audio.current.paused ? audio.current.play() : audio.current.pause();
 
   const handleVolume = (q) => {
-    setStateVolum(q);
+    setStateVolume(q);
     audio.current.volume = q;
   }
 
@@ -42,7 +43,7 @@ function Controls() {
   }
 
   useEffect(() => {
-    audio.current.volume = statevolum;
+    audio.current.volume = statevolume;
     if (playing) { toggleAudio() }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSong])
@@ -59,11 +60,9 @@ function Controls() {
         type="audio/mpeg"
         preload='true'
         src={songs[currentSong][1]} />
-      <div className="vlme">
-
-        <span className="volum"><i className="fas fa-volume-down"></i></span>
-        <input value={Math.round(statevolum * 100)} type="range" name="volBar" id="volBar" onChange={(e) => handleVolume(e.target.value / 100)} />
-
+      <div className="vlme" onClick={this.props.mute}>
+        <span className="volume"><i className="fas fa-volume-down"></i></span>
+        <input value={Math.round(statevolume * 100)} type="range" name="volBar" id="volBar" onChange={(e) => handleVolume(e.target.value / 100)} />
       </div>
       <div className="musicControls">
         <span className="prev" onClick={prevSong}><i className="fas fa-step-backward"></i></span>

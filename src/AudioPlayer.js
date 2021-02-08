@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Header from './Components/Layout/Header'
+import Footer from './Components/Layout/Footer'
 import Playlist from './Components/Features/Playlist'
-import Actions from './Actions'
 import Controls from './Components/Controls'
 
 import PlayerState from './Components/PlayerState'
@@ -18,13 +18,11 @@ render() {
     <CssBaseline />
       <Container>
         <Header />
-        <div className="player-ctn">
           <PlayerState>
-              <Actions /> 
-              <Controls />
-              <Playlist />
+            <Controls />
+            <Playlist />  
           </PlayerState>
-          </div>
+          <Footer />
     </Container>
     </>
   );
