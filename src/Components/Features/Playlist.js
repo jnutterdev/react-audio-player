@@ -5,11 +5,10 @@ import playerContext from '../PlayerContext'
 function Playlist() {
   const { SetCurrent, currentSong, songs } = useContext(playerContext)
 
-
   return (
     <div className="playlist-ctn">     
           <div className="playlist-track-ctn">
-              <ul className="loi">
+              <ul className="plist-style">
                {
             songs.map((song, i) =>
               <li className={'songContainer ' + (currentSong === i ? 'selected' : '')} key={i} onClick={() => { SetCurrent(i); }}>

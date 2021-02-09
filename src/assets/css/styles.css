@@ -328,3 +328,13 @@ input[type=range]:focus::-ms-fill-upper {
 .hide {
     display: none;
 }
+
+.plist-style {
+    border-collapse: collapse;
+    width: 95%;
+}
+
+.plist-style li {
+    border: 0.5px solid #4ac7b038;
+    padding: 9px;
+}
