@@ -9,11 +9,7 @@ function Controls() {
     songs,
     nextSong,
     prevSong,
-    repeat,
-    random,
     playing,
-    toggleRandom,
-    toggleRepeat,
     togglePlaying,
     handleEnd,
 

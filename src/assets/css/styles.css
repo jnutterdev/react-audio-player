@@ -5,10 +5,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
 span {
     color: #fff;
     font-family: 'Poppins', sans-serif;
@@ -42,25 +38,11 @@ i {
     color: #F28E13;
 }
 
-
-/* ------------------------------------------------------
-
-MAIN WEB AUDIO PLAYER STYLES
-
------------------------------------------------------- */
-
 .myProgress {
     width: 400px;
     cursor: pointer;
     border-radius: 10px;
     margin: auto;
-}
-
-.myBar {
-    width: 0%;
-    height: 5px;
-    background-color: #3FA693;
-    border-radius: 10px;
 }
 
 input[type=range] {
@@ -163,14 +145,6 @@ input[type=range]:focus::-ms-fill-upper {
     background: #F28E13;
 }
 
-.plsoptions {
-    justify-self: flex-end;
-}
-
-.logo {
-    fill: red;
-}
-
 .btn-action {
     cursor: pointer;
     padding-top: 10px;
@@ -207,10 +181,6 @@ input[type=range]:focus::-ms-fill-upper {
     margin-left: 3px;
 }
 
-.duration {
-    margin-left: 10px;
-}
-
 .title {
     margin-left: 10px;
     width: 210px;
@@ -223,10 +193,6 @@ input[type=range]:focus::-ms-fill-upper {
     padding: 10px;
     background-color: #0e0e0e;
     margin: 100px auto 20px auto;
-}
-
-.play-list-menu {
-    display: flex;
 }
 
 .playlist-track-ctn {
@@ -250,16 +216,6 @@ input[type=range]:focus::-ms-fill-upper {
     width: 80%;
 }
 
-.playlist-info-track,
-.playlist-duration {
-    padding-top: 7px;
-    padding-bottom: 7px;
-    color: #5AEDD2;
-    font-size: 14px;
-    pointer-events: none;
-    width: 420px;
-}
-
 .playlist-ctn {
     padding-bottom: 20px;
     width: 600px;
@@ -272,57 +228,9 @@ input[type=range]:focus::-ms-fill-upper {
     font-weight: bold;
 }
 
-.active-track>.playlist-info-track,
-.active-track>.playlist-duration,
-.active-track>.playlist-btn-play {
-    color: #3FA693 !important;
-}
-
-.playlist-btn-play {
-    pointer-events: none;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
 .fas {
     color: #3FA693;
     font-size: 20px;
-}
-
-.slider-ctn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.slider {
-    -webkit-appearance: none;
-    width: 50%;
-    height: 5px;
-    border-radius: 5px;
-    background: #d9d9f2;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: #3FA693;
-    cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #3FA693;
-    cursor: pointer;
 }
 
 .hide {
