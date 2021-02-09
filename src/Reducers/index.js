@@ -3,7 +3,7 @@ import {
     TOGGLE_PLAYING
   } from './types'
   
-  export default (state, action) => {
+const playerReducer= (state, action) => {
     switch (action.type) {
       case SET_CURRENT_SONG:
         return {
@@ -20,3 +20,5 @@ import {
         return state
     }
   }
+
+  export default playerReducer;
