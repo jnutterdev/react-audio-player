@@ -5,6 +5,8 @@ import { songList } from '../assets/songs.js';
 
 import {
   SET_CURRENT_SONG,
+  TOGGLE_RANDOM,
+  TOGGLE_REPEAT,
   TOGGLE_PLAYING
 } from '../Reducers/types'
 
@@ -12,6 +14,8 @@ const PlayerState = props => {
   const initialState = {
     currentSong: 0,
     songs: songList,
+    repeat: false,
+    random: false,
     playing: false,
     audio: null
   }
@@ -39,16 +43,41 @@ const PlayerState = props => {
     }
   }
 
+  // Repeat and Random
+  const toggleRepeat = (id) => dispatch({ type: TOGGLE_REPEAT, data: state.repeat ? false : true })
+  const toggleRandom = (id) => dispatch({ type: TOGGLE_RANDOM, data: state.random ? false : true })
+
+ // End of Song
+ const handleEnd = () => {
+  // Check for random and repeat options
+  if (state.random) {
+    return dispatch({ type: SET_CURRENT_SONG, data: ~~(Math.random() * state.songs.length) })
+  } else {
+    if (state.repeat) {
+      nextSong()
+    } else if ((state.currentSong === state.songs.length - 1)) {
+      return
+    } else {
+      nextSong();
+    }
+  }
+}
+
   return <playerContext.Provider
     value={{
       currentSong: state.currentSong,
       songs: state.songs,
+      repeat: state.repeat,
+      random: state.random,
       playing: state.playing,
       audio: state.audio,
       nextSong,
       prevSong,
       SetCurrent,
+      toggleRandom,
+      toggleRepeat,
       togglePlaying,
+      handleEnd
     }}>
 
     {props.children}

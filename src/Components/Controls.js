@@ -9,7 +9,11 @@ function Controls() {
     songs,
     nextSong,
     prevSong,
+    repeat,
+    random,
     playing,
+    toggleRandom,
+    toggleRepeat,
     togglePlaying,
     handleEnd,
 
@@ -58,8 +62,8 @@ function Controls() {
           src={songs[currentSong][1]} />
 
    
-        <div class="infos-ctn">
-            <div class="title">{songs[currentSong][0]}</div>
+        <div className="infos-ctn">
+            <div className="title">{songs[currentSong][0]}</div>
         </div>
 
         <div className="myProgress">
@@ -71,27 +75,37 @@ function Controls() {
             <span className="totalT">{fmtMSS(dur)}</span>
         </div>
 
-        <div class="btn-ctn">
-            <div class="btn-action first-btn">
+        <div className="btn-ctn">
+            <div className="btn-action first-btn">
                 <div id="btn-faws-back">
                     <span className="prev" onClick={prevSong}><i className="fas fa-step-backward"></i></span>
                 </div>
             </div>
           
-            <div class="btn-action" onClick={() => { togglePlaying(); toggleAudio(); }}>
+            <div className="btn-action" onClick={() => { togglePlaying(); toggleAudio(); }}>
                 <div id="btn-faws-play-pause">
                     <span className={!playing ? '' : 'hide'}><i className="fas fa-play"></i></span>
                     <span className={!playing ? 'hide' : ''}><i className="fas fa-pause"></i></span>
                 </div>
             </div>
         
-            <div class="btn-action">
+            <div className="btn-action">
                 <div id="btn-faws-next">
                     <span className="next" onClick={nextSong}><i className="fas fa-step-forward"></i></span>
                 </div>
             </div>
+            <div className="btn-action">
+                <span onClick={toggleRandom} className={"random " + (random ? 'active' : '')}>
+                  <i className="fas fa-random"></i>
+                </span>
+            </div>
+            <div className="btn-action">
+                <span onClick={toggleRepeat} className={"repeat " + (repeat ? 'active' : '')}>
+                   <i className="fas fa-redo-alt"></i>
+                </span>
+            </div>
             
-            <div class="btn-mute" id="toggleMute">
+            <div className="btn-mute" id="toggleMute">
                 <div id="btn-faws-volume">
                     <span className="volume"><i className="fas fa-volume-down"></i></span>
                     <input value={Math.round(statevolume * 100)} type="range" name="volBar" id="volBar" onChange={(e)=> handleVolume(e.target.value / 100)} />
