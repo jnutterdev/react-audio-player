@@ -246,3 +246,8 @@ input[type=range]:focus::-ms-fill-upper {
     border: 0.5px solid #4ac7b038;
     padding: 9px;
 }
+
+.btn-action .active .fas,
+.fas .fa-pause {
+    color: #F28E13;
+}
