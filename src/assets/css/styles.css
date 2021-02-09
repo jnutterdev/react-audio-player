@@ -47,8 +47,9 @@ i {
 
 input[type=range] {
     -webkit-appearance: none;
-    margin: 10px 5;
+    margin: 12px 5;
     width: 80%;
+    background: #000000;
 }
 
 input[type=range]:focus {
