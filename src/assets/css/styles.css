@@ -9,6 +9,15 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+span {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+i {
+    margin-right: 5px;
+}
+
 .audio-container {
     margin: 50px auto;
 }
@@ -40,18 +49,122 @@ MAIN WEB AUDIO PLAYER STYLES
 
 ------------------------------------------------------ */
 
-#myProgress {
+.myProgress {
     width: 400px;
-    background-color: #d9d9f2;
     cursor: pointer;
     border-radius: 10px;
+    margin: auto;
 }
 
-#myBar {
+.myBar {
     width: 0%;
     height: 5px;
     background-color: #3FA693;
     border-radius: 10px;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    margin: 10px 5;
+    width: 80%;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #F28E13;
+    border-radius: 5px;
+    border: 0px solid #000000;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 1px #000000;
+    border: 0px solid #000000;
+    height: 13px;
+    width: 4px;
+    border-radius: 50px;
+    background: #2a6586;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -4px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #F28E13;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #F28E13;
+    border-radius: 5px;
+    border: 0px solid #000000;
+}
+
+input[type=range]::-moz-range-thumb {
+    box-shadow: 0px 0px 1px #000000;
+    border: 0px solid #000000;
+    height: 13px;
+    width: 4px;
+    border-radius: 50px;
+    background: #2a6586;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #F28E13;
+    border: 0px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px #000000;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: #F28E13;
+    border: 0px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px #000000;
+}
+
+input[type=range]::-ms-thumb {
+    box-shadow: 0px 0px 1px #000000;
+    border: 0px solid #000000;
+    height: 13px;
+    width: 4px;
+    border-radius: 50px;
+    background: #2a6586;
+    cursor: pointer;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: #F28E13;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: #F28E13;
+}
+
+.plsoptions {
+    justify-self: flex-end;
 }
 
 .logo {
@@ -106,22 +219,27 @@ MAIN WEB AUDIO PLAYER STYLES
 
 .player-ctn {
     border-radius: 15px;
-    width: 420px;
+    width: 600px;
     padding: 10px;
     background-color: #0e0e0e;
-    margin: auto;
+    margin: 100px auto 20px auto;
+}
+
+.play-list-menu {
+    display: flex;
 }
 
 .playlist-track-ctn {
     display: flex;
-    background-color: #464646;
+    background-color: #0e0e0e;
     margin-top: 3px;
     border-radius: 5px;
     cursor: pointer;
+    width: 600px;
 }
 
-.playlist-track-ctn:last-child {
-    border: 1px solid #3FA693;
+.playlist-ctn ul li {
+    list-style-type: none;
 }
 
 .playlist-track-ctn>div {
@@ -139,10 +257,13 @@ MAIN WEB AUDIO PLAYER STYLES
     color: #5AEDD2;
     font-size: 14px;
     pointer-events: none;
+    width: 420px;
 }
 
 .playlist-ctn {
     padding-bottom: 20px;
+    width: 600px;
+    margin: 9px auto 20px auto;
 }
 
 .active-track {
@@ -202,4 +323,18 @@ MAIN WEB AUDIO PLAYER STYLES
     border-radius: 50%;
     background: #3FA693;
     cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.plist-style {
+    border-collapse: collapse;
+    width: 95%;
+}
+
+.plist-style li {
+    border: 0.5px solid #4ac7b038;
+    padding: 9px;
 }
