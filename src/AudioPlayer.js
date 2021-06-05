@@ -6,6 +6,7 @@ import Container from '@material-ui/core/Container';
 import Header from './Components/Layout/Header'
 import Footer from './Components/Layout/Footer'
 import Playlist from './Components/Features/Playlist'
+
 import Controls from './Components/Controls'
 import PlayerState from './Components/PlayerState'
 
@@ -26,4 +27,4 @@ render() {
   );
 }
 }
-export default AudioPlayer;
+export default AudioPlayer

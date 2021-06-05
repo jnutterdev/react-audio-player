@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from 'react'
 import playerContext from './PlayerContext'
+import FileUpload from './Features/FileUpload'
 
 function Controls() {
 
@@ -112,6 +113,7 @@ function Controls() {
                 </div>
             </div>
       </div>
+      <FileUpload></FileUpload>
     </div>
 
   )
