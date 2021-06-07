@@ -13,25 +13,9 @@ function FileUploadPage(){
 	};
 
 	return(
-   <div>
-			<input type="file" name="file" onChange={changeHandler} />
-			{isFilePicked ? (
-				<div>
-					<p>Filename: {selectedFile.name}</p>
-					<p>Filetype: {selectedFile.type}</p>
-			
-					<p>
-						lastModifiedDate:{' '}
-						{selectedFile.lastModifiedDate.toLocaleDateString()}
-					</p>
-				</div>
-			) : (
-				<p>Select a file to show details</p>
-			)}
-			<div>
-				<button onClick={handleSubmission}>Submit</button>
-			</div>
-		</div>
+        <><i class="fas fa-eject"></i>
+            <label htmlFor=""></label>
+		</>
 	)
 }
 

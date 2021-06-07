@@ -76,8 +76,17 @@ function Controls() {
             <span className="totalT">{fmtMSS(dur)}</span>
         </div>
 
+     
+       
+     
+
         <div className="btn-ctn">
-            <div className="btn-action first-btn">
+
+        <div className="btn-action first-btn">
+          <span><FileUpload></FileUpload></span>
+        </div>
+
+            <div className="btn-action">
                 <div id="btn-faws-back">
                     <span className="prev" onClick={prevSong}><i className="fas fa-step-backward"></i></span>
                 </div>
@@ -113,7 +122,6 @@ function Controls() {
                 </div>
             </div>
       </div>
-      <FileUpload></FileUpload>
     </div>
 
   )
